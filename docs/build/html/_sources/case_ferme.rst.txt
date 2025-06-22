@@ -1,0 +1,7 @@
+case\_ferme module
+==================
+
+.. automodule:: case_ferme
+   :members:
+   :show-inheritance:
+   :undoc-members:

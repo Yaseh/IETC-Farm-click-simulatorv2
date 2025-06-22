@@ -1,0 +1,7 @@
+ressources\_joueur module
+=========================
+
+.. automodule:: ressources_joueur
+   :members:
+   :show-inheritance:
+   :undoc-members:

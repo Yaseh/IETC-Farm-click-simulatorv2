@@ -1,0 +1,34 @@
+[
+    {
+        "identifiant": "3b142e7c-5c11-4f15-959c-0c763ae16a6f",
+        "argent": 100,
+        "medicaments": 0,
+        "eau": 100000.0,
+        "nourriture_betails": 200,
+        "graines": {
+            "blé": 5,
+            "carotte": 5,
+            "maïs": 5
+        },
+        "animaux": {
+            "poule": 3,
+            "mouton": 2,
+            "vache": 1
+        },
+        "batiments": {
+            "poulailler": 2,
+            "laiterie": 1,
+            "étable": 1
+        },
+        "production_batiments": {
+            "oeuf": 30,
+            "lait": 20,
+            "laine": 50
+        },
+        "techniciens": {
+            "mécanicien": 1,
+            "plombier": 1,
+            "électricien": 1
+        }
+    }
+]
