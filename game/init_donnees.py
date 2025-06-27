@@ -30,18 +30,36 @@ def initialiser_cultures():
     DepotCulture().sauvegarder_tous(cultures)
     print("Cultures initialisées.")
 
-def initialiser_batiments():
+def initialiser_batiments(largeur=2, hauteur=3):
     """
     Initialise les bâtiments de la ferme.
 
-    Crée un exemplaire pour chaque type de bâtiment avec des coordonnées prédéfinies
-    et les sauvegarde dans le dépôt correspondant.
+    Crée un exemplaire pour chaque type de bâtiment avec des coordonnées prédéfinies.
+    Les bâtiments sont empilés verticalement sans chevauchement, en tenant compte 
+    de la hauteur définie. Chaque bâtiment est ensuite sauvegardé dans le dépôt.
+
+    Args:
+        largeur (int, optional): Largeur de chaque bâtiment. Par défaut 2.
+        hauteur (int, optional): Hauteur de chaque bâtiment. Par défaut 3.
     """
-    batiments = [CLASSES_BATIMENTS[nom](identifiant=generer_identifiant(), 
-                                        x=0, y= i * 2, largeur=2, hauteur=2)
-                 for i, nom in enumerate(NOMS_BATIMENTS)]
-    DepotBatiment().sauvegarder_tous(batiments)
-    print("✔ Bâtiments initialisés.")
+    depot = DepotBatiment()
+    batiments = []
+    y_courant = 0
+
+    for nom in NOMS_BATIMENTS:
+        batiment = CLASSES_BATIMENTS[nom](
+            identifiant=generer_identifiant(),
+            x=0,
+            y=y_courant,
+            largeur=largeur,
+            hauteur=hauteur
+        )
+        batiments.append(batiment)
+        # Décale verticalement pour éviter le chevauchement
+        y_courant += hauteur  
+
+    depot.sauvegarder_tous(batiments)
+    print(f"✔ {len(batiments)} bâtiments initialisés avec largeur={largeur} et hauteur={hauteur}.")
 
 def initialiser_grille_ferme():
     """
